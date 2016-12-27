@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MVC_Web.Models.User>
+
+@{
+    ViewBag.Title = "UsersList";
+}
+
+<h2>UsersList</h2>
+@if (Session["UserID"] != null)
+{
+    <p>
+        @Html.ActionLink("Create New", "CreateUser")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NickName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastLoginDate)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NickName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastLoginDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditUser", new { id = item.UserId })   |
+                    @Html.ActionLink("Delete", "DeleteUser", new { id = item.UserId })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

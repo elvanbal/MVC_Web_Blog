@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MVC_Web.Models.Article>
+
+@{
+    ViewBag.Title = "ArticleList";
+}
+
+<h2>ArticleList</h2>
+@if (Session["UserID"] != null)
+{
+    <p>
+        @Html.ActionLink("Create New", "CreateArticle")
+    </p>
+}
+
+<table class="table" >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.Raw(HttpUtility.HtmlDecode(item.Content))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditArticle", new { id = item.IND }) |
+                @Html.ActionLink("Delete", "DeleteArticle", new { id = item.IND }) |
+            </td>
+        </tr>
+    }
+
+</table>
