@@ -5,7 +5,7 @@
 }
 
 <h2>UsersList</h2>
-@if (Session["UserID"] != null)
+@if (Request.IsAuthenticated == true )
 {
     <p>
         @Html.ActionLink("Create New", "CreateUser")

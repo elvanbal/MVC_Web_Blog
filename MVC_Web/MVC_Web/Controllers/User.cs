@@ -6,22 +6,17 @@ namespace MVC_Web.Controllers
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class User
+    public partial class User : BaseController  
     {
         public int UserId { get; set; }
-
-        [Required]
-        [StringLength(150)]
         public string UserName { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; } 
+        public string[] roles { get; set; }
 
-        [Required]
-        [StringLength(100)]
-        public string NickName { get; set; }
 
-        [Required]
-        [StringLength(100)]
-        public string Password { get; set; }
 
-        public DateTime LastLoginDate { get; set; }
+
+
     }
 }

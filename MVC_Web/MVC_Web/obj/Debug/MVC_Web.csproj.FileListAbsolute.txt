@@ -48,3 +48,5 @@ C:\Users\Elvan.bal\Desktop\C#\MVC_Web\MVC_Web\MVC_Web\bin\System.Web.Helpers.xml
 C:\Users\Elvan.bal\Desktop\C#\MVC_Web\MVC_Web\MVC_Web\bin\System.Web.Mvc.xml
 C:\Users\Elvan.bal\Desktop\C#\MVC_Web\MVC_Web\MVC_Web\obj\Debug\MVC_Web.dll
 C:\Users\Elvan.bal\Desktop\C#\MVC_Web\MVC_Web\MVC_Web\obj\Debug\MVC_Web.pdb
+C:\Users\Elvan.bal\Desktop\C#\MVC_Web\MVC_Web\MVC_Web\bin\Newtonsoft.Json.dll
+C:\Users\Elvan.bal\Desktop\C#\MVC_Web\MVC_Web\MVC_Web\bin\Newtonsoft.Json.xml

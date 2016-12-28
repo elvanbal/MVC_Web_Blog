@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MVC_Web.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class AdminController : Controller
     {
         private MVC_BlogEntities db = new MVC_BlogEntities();
@@ -34,7 +35,7 @@ namespace MVC_Web.Controllers
             return View();
         }
 
-       
+
         // POST: Admin/Create
         [HttpPost]
         public ActionResult CreateUser(Models.User user)
@@ -49,7 +50,7 @@ namespace MVC_Web.Controllers
 
                 return RedirectToAction("UsersList");
             }
-            catch  
+            catch
             {
                 return View();
             }
@@ -77,7 +78,7 @@ namespace MVC_Web.Controllers
         {
             try
             {
-         
+
                 if (ModelState.IsValid)
                 {
                     db.Entry(collection).State = EntityState.Modified;
@@ -99,7 +100,7 @@ namespace MVC_Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Models.User  usr = db.Users.Find(id);
+            Models.User usr = db.Users.Find(id);
             if (usr == null)
             {
                 return HttpNotFound();
@@ -123,7 +124,7 @@ namespace MVC_Web.Controllers
                 catch
                 {
                     return View();
-                } 
+                }
             }
             catch
             {

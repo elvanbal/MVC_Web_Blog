@@ -10,12 +10,13 @@ using System.Web.Mvc;
 
 namespace MVC_Web.Controllers
 {
-
+    [Authorize(Roles = "admin")]
     public class ArticleController : Controller
     {
         private MVC_BlogEntities db = new MVC_BlogEntities();
 
         // GET: Article
+        [AllowAnonymous ]
         public ActionResult ArticleList()
         {
             var entities = new MVC_Web.Models.MVC_BlogEntities();

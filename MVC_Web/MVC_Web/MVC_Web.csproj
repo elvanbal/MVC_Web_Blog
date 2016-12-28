@@ -84,6 +84,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Security-Role-UserBased\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -324,8 +327,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TinyMCESampleJQueryController.cs" />
     <Compile Include="Controllers\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -335,6 +339,7 @@
       <DependentUpon>MVC_DB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ArticleViewController.cs" />
+    <Compile Include="Models\CustomPrincipal.cs" />
     <Compile Include="Models\MVC_DB_Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -398,13 +403,13 @@
     <Content Include="scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
     <Content Include="scripts\tinymce\skins\lightgray\fonts\readme.md" />
     <Content Include="scripts\tinymce\langs\readme.md" />
-    <Content Include="Views\TinyMCESampleJQuery\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_full_compressed.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_full.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_jquery_full.cshtml" />
     <Content Include="Views\Article\EditArticle.cshtml" />
     <Content Include="Views\Article\DeleteArticle.cshtml" />
     <Content Include="Views\Admin\DeleteUser.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

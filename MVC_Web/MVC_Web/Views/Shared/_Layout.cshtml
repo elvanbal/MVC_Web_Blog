@@ -44,7 +44,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @if (Session["UserID"] != null)
+                    @if (Request.IsAuthenticated == true)
                     {
                         <p>
                             @Html.ActionLink("Users", "UsersList", "Admin", new { area = "" }, new { @class = "navbar-brand" })
@@ -53,22 +53,21 @@
 
                 </ul>
                 <ul class="nav navbar-nav">
-                    @if (Session["UserID"] == null)
+                    @if (Request.IsAuthenticated != true)
                     {
-                            <p>
-                                @Html.ActionLink("Login", "Login", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                            </p> 
+                        <p>
+                            @Html.ActionLink("Login", "Login", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        </p>
                     }
 
                 </ul>
                 <ul class="nav navbar-nav">
-                    @if (Session["UserID"] != null)
+                    @if (Request.IsAuthenticated == true)
                     {
                         <p>
                             @Html.ActionLink("Logoff", "LogOut", "Home", new { area = "" }, new { @class = "navbar-brand" })
                         </p>
                     }
-
                 </ul>
             </div>
         </div>
